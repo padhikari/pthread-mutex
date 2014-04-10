@@ -22,5 +22,9 @@ int main(){
 }
 
 void *countFunction(){
+    pthread_mutex_lock(&mutex1); //mutex lock
+    counter++;
+    printf("counter value: %d\n",counter);
+    pthread_mutex_unlock(&mutex1); //unlock after finishing routine
     pthread_exit(NULL);
 }
